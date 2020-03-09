@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="FoodForFourth" lang = "en">
+<html ng-app="foodFourth" lang = "en">
 <head>
 	<script 
    src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js">
@@ -8,8 +8,41 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+<script src="app.js"></script>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	
+	<nav class ="navbar navbar-stripe navbar-expand-lg" ng-controller="NavBar">
+		 <div class="container-fluid">
+		 	<div class = "collapse navbar-collapse" id = "fffNavbar">
+		 		<ul class = "nav navbar-nav">
+		 			<li class = "isActive('mission')"><a href='' ng-click = "missionNav()">Our Mission</a></li>
+		 			<li class = "isActive('team')"><a href='' ng-click = "teamNav()">Our Team</a></li>
+		 			<li class = "isActive('Calendar')"><a href='' ng-click = "calNav()">Calendar</a></li>
+		 			<li class = "isActive('Calendar')"><a href='' ng-click = "contactNav()">Contact</a></li>
+		 		</ul>
+		 	</div>
+		 </div>
+	</nav>
+	<section class = "banner">
+		<div class = "row">
+			<div class = "col-5"><!--image goes here--></div>
+			<div class = "col-7 tagline">
+				<div class = "logo">Food <span>for the</span> Fourth</div>
+				<div class ="statistic"><span>40 million Americans</span> are food insecure.</div>
+				<div style = "padding-left: 90px; padding-top: 20px"> Join the movement for </br>a new holiday spirit</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class = "container">
+		<div class ="row">
+		Did you know?
+	</div>
+	</div>
+	</section>
+	<section class = "mission" name ="mission"><h1>Our Mission</h1></section>
 	</body></html>
 
