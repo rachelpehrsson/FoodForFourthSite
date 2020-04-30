@@ -36,18 +36,44 @@ section{
 	flex-grow: 1;
 }
 
+
+
 a{
 	color:var(--color-neublue);
 }
 a:hover{
 	text-decoration: none;
 	color: var(--color-neubluelight);
+	cursor: pointer;
 }
 /*** TODO: GET HAETTENSCHWEILER FONT***/
+.navbar-stripe{
+	position:sticky;
+	top: 0;
+    bottom: 0;
+    z-index: 100;
+}
+.navbar-stripe li{
+	position: relative;
+}
 .navbar-stripe a{
 	color:white;
 	font-size: 30px;
 	font-weight: bold;
+	transition: color .3s;
+}
+.navbar-stripe a::before{
+	content: "\2605";
+	transition: opacity .3s;
+	position: absolute;
+	left:-1em;
+	top:-1px;
+	opacity: 0;
+}
+
+.navbar-stripe a:hover::before{
+	transition: opacity .3s;
+	opacity: 1.0;
 }
 
 /**** BANNER CONTENT ****/

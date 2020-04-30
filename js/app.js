@@ -5,7 +5,12 @@ app.controller('NavBar', ['$scope', '$location', function($scope, $location){
 		var current = $location.path().substring(1) || 'home';
 		return page === current?'active':'';
 	};
-	$scope.missionNav = function(){
-		$location.url("#mission");
+	$scope.appNav = function(event){
+		$location.url("/#"+event.currentTarget.getAttribute("for"));
 	}
+
+	// $scope.init = function () {
+	// 	$location.url.replace(".html#/", ".html");
+	// };
+
 }]);

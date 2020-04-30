@@ -12,16 +12,17 @@
 <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
 <script src="js/app.js"></script>
 <link rel="stylesheet" href="css/style.css">
+<base href="file:///C:/Users/rhp8r/FoodForFourthSite/index.html">
 </head>
 <body>
-	<nav class ="navbar navbar-stripe navbar-expand-lg" ng-controller="NavBar">
+	<nav class ="navbar navbar-stripe navbar-expand-lg" ng-controller="NavBar" data-ng-init="init()">
 		 <div class="container-fluid">
 		 	<div class = "collapse navbar-collapse" id = "fffNavbar">
 		 		<ul class = "nav navbar-nav">
-		 			<li class = "isActive('mission')"><a href='' ng-click = "missionNav()">Our Mission</a></li>
-		 			<li class = "isActive('team')"><a href='' ng-click = "teamNav()">Our Team</a></li>
-		 			<li class = "isActive('Calendar')"><a href='' ng-click = "calNav()">Calendar</a></li>
-		 			<li class = "isActive('Calendar')"><a href='' ng-click = "contactNav()">Contact</a></li>
+		 			<li class = "isActive('mission')"><a href = "#mission" for = "mission" >Our Mission</a></li>
+		 			<li class = "isActive('team')"><a for = "our-team" ng-click = "appNav($event)">Our Team</a></li>
+		 			<li class = "isActive('Calendar')"><a ng-click = "calNav()">Calendar</a></li>
+		 			<li class = "isActive('Contact')"><a  ng-click = "contactNav()">Contact</a></li>
 		 		</ul>
 		 	</div>
 		 </div>
@@ -54,7 +55,7 @@
 	</div>
 	</div>
 	</section>
-	<section class = "mission" name ="mission">
+	<section class = "mission" id = "mission" name ="mission">
 		<h1 class = "section-title">Our Mission</h1>
 		<div class="row justify-content-center">
 			<div class = "col-10">
@@ -65,7 +66,7 @@
 		</div>
 	</section>
 	<!-- OUR TEAM -->
-	<section class = "our-team" name = "our-team">
+	<section class = "our-team" id = "our-team" name = "our-team">
 		<h1 class = "section-title">Our Team</h1>
 		<div class = "row  team">
 		<div class = "team-member">
@@ -90,6 +91,9 @@
 			</div>
 		 </div>
 		</div>
+	</section>
+	<section class ="past-events" name = "past-events">
+		<h1 class = "section-title">Past Events</h1>
 	</section>
 	</body>
 	</html>
