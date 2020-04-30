@@ -71,7 +71,7 @@ a:hover{
 	opacity: 0;
 }
 
-.navbar-stripe a:hover::before{
+.navbar-stripe a:hover::before, .navbar-stripe .active a::before{
 	transition: opacity .3s;
 	opacity: 1.0;
 }
