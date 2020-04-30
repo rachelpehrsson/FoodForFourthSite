@@ -3,14 +3,26 @@
 	--font-oswald: 'Oswald', sans-serif;
 	--color-navy: #0f1f44;
 	--color-red: #961414;
-	--color-tan: #e7d6bf;
+	--color-tan: #F2E7D8;
 	--color-yellow:#e2e56a;
 	--color-sky: #55d3ff;
 	--color-neublue: #2c6a91;
+	--color-neubluelight:#75B9E5;
 }
 
 body{
 	font-family: var(--font-mont);
+}
+
+/**** GENERAL CONTENT ***/
+
+section{
+	padding: 30px 0px;
+}
+.row{
+	margin:5px 0px;
+	padding:0px 20px;
+	width: 100%;
 }
 
 .navbar-stripe{
@@ -22,6 +34,14 @@ body{
 .navbar-stripe .nav{
 	justify-content: space-evenly;
 	flex-grow: 1;
+}
+
+a{
+	color:var(--color-neublue);
+}
+a:hover{
+	text-decoration: none;
+	color: var(--color-neubluelight);
 }
 /*** TODO: GET HAETTENSCHWEILER FONT***/
 .navbar-stripe a{
@@ -41,6 +61,14 @@ section.banner{
 	text-align: end;
 }
 
+.banner .icon{
+	width:18em;
+}
+
+.banner .icon img{
+	width:100%;
+}
+
 .banner .statistic{
 	padding-top: 20px;
 	padding-left:35px;
@@ -51,7 +79,7 @@ section.banner{
 	color:white;
 	font-size: 30px;
 	font-weight: bold;
-	padding-right:12%;
+	/*padding-right:12%;*/
 	line-height: 1;
 }
 
@@ -71,12 +99,76 @@ section.banner{
 }
 
 /**** SECTION CONTENT ****/
-section h1{
+section .section-title{
 	text-align: center;
 	font-weight: bolder;
+	margin-bottom: 40px;
+}
+
+.emphasized{
+	font-weight: bolder;
+	color:var(--color-red);
+}
+
+
+.fact-sheet{
+	display: block;
+}
+
+.fact-sheet .did-you-know{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	border-right:2px solid #ddd;
+}
+.fact-sheet h1{
+	font-weight: bold;
+}
+
+.fact-list{
+	font-size:20px;
+}
+
+.fact-list li{
+	margin:10px 0px;
 }
 
 .mission{
 	background-color: var(--color-tan);
+	font-size: 18px;
 }
 
+/**** OUR TEAM ***/
+section.our-team{
+	background-color:var(--color-neublue);
+	color:white;
+}
+.team-member{
+	flex: 33%;
+	justify-content: center;
+	display: inline-block;
+	text-align: center;
+}
+
+img.team-portrait{
+	width:300px;
+	border-radius: 50%;
+	border:10px solid var(--color-red);
+	margin-bottom: 20px;
+}
+
+.team-bio{
+	background-color: var(--color-navy);
+	border-radius: 10px;
+	text-align: center;
+	display: inline-block;
+	width: 80%
+}
+
+.team-bio .name{
+	font-weight: bold;
+}
+
+.team-bio .title{
+	font-style:italic;
+}
