@@ -18,10 +18,10 @@
 		 <div class="container-fluid">
 		 	<div class = "collapse navbar-collapse" id = "fffNavbar">
 		 		<ul class = "nav navbar-nav">
-		 			<li class = "isActive('mission')"><a href = "#mission" for = "mission" >Our Mission</a></li>
+		 			<li class = "isActive('mission')"><a for = "mission" ng-click = "appNav($event)">Our Mission</a></li>
 		 			<li class = "isActive('team')"><a for = "ourteam" ng-click = "appNav($event)">Our Team</a></li>
-		 			<li class = "isActive('Calendar')"><a ng-click = "calNav()">Calendar</a></li>
-		 			<li class = "isActive('Contact')"><a  ng-click = "contactNav()">Contact</a></li>
+		 			<li class = "isActive('Calendar')"><a for = "calendar" ng-click = "appNav($event)">Calendar</a></li>
+		 			<li class = "isActive('Contact')"><a for="contact" ng-click = "appNav($event)">Contact</a></li>
 		 		</ul>
 		 	</div>
 		 </div>
