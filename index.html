@@ -10,6 +10,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+<script src="content/past-events-list.jsonp"></script>
 <script src="js/app.js"></script>
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -91,8 +92,26 @@
 		 </div>
 		</div>
 	</section>
-	<section class ="past-events" name = "past-events">
+	<!-- COMING SOON -- EVENTS AND CALENDAR-->
+	<section class ="past-events" name = "past-events" ng-controller = "PastEventsCtrl">
 		<h1 class = "section-title">Past Events</h1>
+		<div class = "row justify-content-center" >
+		<div class = "col-7 year justify-content-center" ng-repeat="yearList in past_events_by_year">
+			<div class = "year-dropdown">
+			<div class = "year-title" ng-click = "showYear($event)">{{ yearList.year }}</div>
+			</div>
+			<div class = "event-lists">
+			<div class = "event-card" ng-repeat="event in yearList.events">
+				<h2>{{ event.title }}</h2>
+			</div>
+			</div>
+		</div>
+	</div>
+		</div>
+	</section>
+	<section class = "contact">
+		<h1 class = "section-title">Contact Us</h1>
+		<div class = "row contact form"></div>
 	</section>
 	</body>
 	</html>

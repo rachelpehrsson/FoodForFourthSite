@@ -198,3 +198,28 @@ img.team-portrait{
 .team-bio .title{
 	font-style:italic;
 }
+
+/**** PAST EVENTS *****/
+.year{
+	display: inline-block;
+}
+.year-dropdown{
+	display: block;
+	text-align: center;
+}
+
+.year-dropdown .year-title{
+	border-bottom: 2px solid #ddd;
+    font-size: 40px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.past-events .event-lists{
+	width: 100%;
+	display: none;
+}
+
+.year.active .event-lists{
+	display: block;
+}
