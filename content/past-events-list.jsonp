@@ -5,31 +5,27 @@ pastData = [
 		{
 			"title": "Flier Bomb at Lititz Fourth of July",
 			"location": "Springs Park, Lititz, PA",
-			"start-date": "7/4/2019",
-			"end-date": "7/4/2019", 
-			"main-image": "resources/events-2019/flier-bomb2019.jpg",
+			"start_date": "7/4/2019",
+			"end_date": "7/4/2019", 
+			"main_image": "resources/events-2019/flier-bomb2019.jpg",
 			"description": "<p>Food for the Fourth kicked off our first ever event with some old-fashioned grassroots fliering. Our president attended the annual Lititz Fourth of July celebration with info cards listing the facts on the role of food banks in America and encouraging donation during the Independence day season. Over the course of the day, she distributed over 500 cards to celebration attendees. Response was highly positive, and several attendees expressed interest in donating to the Firework Food Drive to be held later that week.</p><p>Food for the Fourth hopes to expand our presence at the Lititz Fourth of July 2020.</p>"
 		},
 		{
 			"title": "Firework Food Drive",
 			"location": "Lush Bazaar in Lancaster, PA",
-			"start-date": "7/6/2019",
-			"end-date": "7/13/2019", 
-			"main-image": "resources/events-2019/dropoff.jpgs",
+			"start_date": "7/6/2019",
+			"end_date": "7/13/2019", 
+			"main_image": "resources/events-2019/dropoff.jpg",
 			"description": "<p>To supplement our efforts towards spreading awareness, FOTF also organized local food drives for the benefit the <a>Lancaster County Food Hub.</a> Timbrel Chyatee of Lush Bazaar in downtown Lancaster graciously hosted our dropbox at her shop. We finished off the event by leading a collection wagon to collect donations door-to-door. It was a great way to introduce ourselves to the local community and get some direct feedback! Thanks to the generosity of Lancaster's local community, we managed to fill both the box and the wagon.</p><p>The Food Hub was very pleased with our results! We'd like to thank everyone who donated for making a difference--even a single can is a boost for someone in need.</p>"
 		},
 		{
 			"title": "Tabling at Lancaster Pride Festival 2019",
 			"location": "Clipper Magazine Stadium",
-			"start-date": "7/20/2019",
-			"end-date": "7/20/2019", 
-			"main-image": "",
+			"start_date": "7/20/2019",
+			"end_date": "7/20/2019", 
+			"main_image": "",
 			"description": "<p>Food for the Fourth finished off our 2019 season with promotion at the 2019 Lancaster County Pride Festival! The LGBT community disproportionately faces poverty in America, making food banks especially important. We promoted the numerous food banks with policies of non-descrimination, including our ally the Lancaster County Food Hub. Several members of the community approached us to thank us for our efforts, describing the roles that food banks have served in their own lives. We thank you all again for your support, and hope to see you next year!</p>"
 		}
 	]
-}, 
-{
-	"year":"2020",
-	"events":[]
 }
 ];

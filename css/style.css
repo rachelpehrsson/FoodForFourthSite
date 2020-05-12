@@ -6,6 +6,7 @@
 	--color-tan: #F2E7D8;
 	--color-yellow:#e2e56a;
 	--color-sky: #55d3ff;
+	--color-skylight:#dbf6ff;
 	--color-neublue: #2c6a91;
 	--color-neubluelight:#75B9E5;
 }
@@ -50,8 +51,8 @@ a:hover{
 .navbar-stripe{
 	position:sticky;
 	top: 0;
-    bottom: 0;
-    z-index: 100;
+	bottom: 0;
+	z-index: 100;
 }
 .navbar-stripe li{
 	position: relative;
@@ -77,7 +78,7 @@ a:hover{
 }
 
 /**** BANNER CONTENT ****/
-section.banner{
+section.banner, section.footer{
 	background-color: var(--color-navy);
 	padding:20px 0px;
 }
@@ -203,23 +204,176 @@ img.team-portrait{
 .year{
 	display: inline-block;
 }
-.year-dropdown{
+.year .toggler{
 	display: block;
 	text-align: center;
 }
 
-.year-dropdown .year-title{
+.year .toggler .year-title{
 	border-bottom: 2px solid #ddd;
-    font-size: 40px;
-    display: inline-block;
-    cursor: pointer;
+	font-size: 40px;
+	display: inline-block;
+	cursor: pointer;
 }
 
-.past-events .event-lists{
+.year .toggler .year-title::after{
+	display: inline-block;
+	content:"\25BE";
+	color:var(--color-red);
+	transition:transform .5s;
+	transform:rotate(0deg);
+	-webkit-transform: rotate(0deg);
+}
+
+.year.active .toggler .year-title::after{
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
+	transition: transform .5s, -webkit-transform .5s;
+}
+
+.past-events .year .event-lists{
 	width: 100%;
-	display: none;
+	height: 0%;
+	overflow:hidden;
+	display: inline-block;
+	transition: height .5s !important;
+	transition-timing-function: ease;
 }
 
-.year.active .event-lists{
-	display: block;
+.past-events .year .event-lists .event-card{
+	visibility: hidden;
+	height: 0px;
+	transition: visibility 0s, height .5s;
+	transition-delay: .5s, 0s;
+
 }
+
+.past-events .year.active .event-lists{
+	height:100%;
+	transition: height .5s;
+}
+
+.past-events .year.active .event-lists .event-card{
+	visibility: visible;
+	height:210px;
+	overflow: hidden;
+	transition-delay: 0s, 0s;
+	margin: 20px 0px;
+	padding:5px;
+	border: 1px solid var(--color-red);
+	border-radius:5px;
+}
+
+.past-events .event-card .main-image{
+	width: 20%;
+	height: 100%;
+	float: left;
+	display: flex;
+	padding: 5px;
+	border-right: 1px solid var(--color-red);
+} 
+
+.past-events .event-card .main-image img{
+	width: 100%;
+	object-fit: cover;
+}
+
+.past-events .event-card .details {
+	display: inline-block;
+	padding-left: 10px;
+	width: 80%;
+	height: 100%;
+	position:relative;
+}
+
+.past-events .details .content{
+	 text-overflow: ellipsis;
+	 overflow:hidden;
+	 -webkit-line-clamp: 4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    height: 50%;
+
+}
+
+.past-events .event-card .details .title{
+	font-size: 25px;
+	color:var(--color-red);
+	font-weight: bold;
+}
+
+.past-events .card-footer{
+	position:absolute;
+	background-color: var(--color-neublue);
+	bottom:0;
+	width: 97%;
+	color:white;
+	font-weight: bold;
+	display: flex;
+    justify-content: space-between;
+    padding:5px;
+}
+
+.past-events .card-footer .date{
+	display: flex;
+	align-items:center;
+}
+
+.past-events .btn.read-more{
+	background-color: var(--color-red);
+	color:white;
+}
+.past-events .btn.read-more:hover{
+	cursor:pointer;
+	filter:brightness(1.2);	
+}
+/*** CALENDAR ***/
+section.calendar{
+	background-color: var(--color-tan);
+}
+
+/*** CONTACT US ****/
+
+section.contact{
+	background-color:var(--color-skylight);
+}
+
+.contact .form-group{
+	width:50%;
+}
+
+.contact .form-group.message{
+	width:100%;
+}
+
+.contact .form-control{
+	border:none;
+}
+
+.contact .form-control:focus{
+	box-shadow: 0 0 0 0.2rem var(--color-neublue);
+	border:none;
+}
+
+.contact label{
+	font-weight: bold;
+	color:var(--color-neublue);
+}
+
+.contact .submit{
+	background-color: var(--color-red);
+	border:none;
+	font-weight: bold;
+	padding: .8rem 1.5rem;
+}
+
+.contact .submit:hover, .contact .submit:active, .contact .submit:focus{
+	filter:brightness(1.2);	
+	border:;
+	box-shadow:none;
+}
+
+/**** FOOTER***/
