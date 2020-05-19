@@ -2,9 +2,9 @@ var app = angular.module('foodFourth', []);
 
 app.config(['$locationProvider', function($locationProvider) {
 	$locationProvider.html5Mode({
-  enabled: true,
-  requireBase: false
-  });
+		enabled: true,
+		requireBase: false
+	});
 }]);
 
 app.controller('NavBar', ['$scope', '$location', function($scope, $location){
@@ -29,11 +29,21 @@ app.service("EventsParser", function(){
 	var past_events = pastData;
 	var upcoming_events = "";
 	this.getPastEvents = function(){
-			return past_events;
+		return past_events;
 	}
 
 
 });
+
+app.directive("focusedEventPop",['$compile', '$http', function($compile, $http){
+	return{
+		restrict : 'E',
+		//change to url when in a server?
+		template:'<div class = "overlay"><div class ="focused-event"><div class = "toolbar"><div class = "date">{{ focusedEvent.start_date }}</div><div class = "btn close-focus" ng-click="closeFocus()">'+
+		'Close</div></div><div class = "main-image"><img ng-src="{{ focusedEvent.main_image }}"></div><div class = "details"><div class = "title">{{ focusedEvent.title }}</div>'+
+		'<div class = "content" ng-bind-html ="render(focusedEvent.description)"></div></div></div></div>'
+	}
+}]);
 
 //event JSON format
 //title
@@ -43,7 +53,7 @@ app.service("EventsParser", function(){
 //main_image
 //description
 
-app.controller('PastEventsCtrl', function($scope, $sce, EventsParser){
+app.controller('PastEventsCtrl', function($scope, $sce, $element, $compile, EventsParser){
 	// var past_events = pastData;
 	$scope.past_events_by_year = EventsParser.getPastEvents();
 	$scope.showYear = function(e){ 
@@ -52,6 +62,16 @@ app.controller('PastEventsCtrl', function($scope, $sce, EventsParser){
 	$scope.render = function(html){
 		return $sce.trustAsHtml(html);
 	}
+	$scope.eventFocus = function(event){
+		$scope.focusedEvent = event;
+		var newElement = $compile("<focused-event-pop></focused-event-pop>")( $scope );
+		$element.append(newElement);
+
+	}
+
+	$scope.closeFocus = function(){
+		$element[0].getElementsByTagName("focused-event-pop")[0].remove();
+	};
 });
 
 /**** CALENDAR ****/
@@ -61,10 +81,54 @@ app.controller('CalendarCtrl', function($scope){
 
 /**** CONTACT FORM ****/
 
-app.controller('ContactCtrl', function($scope){
-	$scope.submit = function(){
-
+//Directive to pause default validation and perform custom validation
+app.directive('validSubmit', [ '$parse', function($parse) {
+	return {
+			// we need a form controller to be on the same element as this directive
+			// in other words: this directive can only be used on a &lt;form&gt;
+			require: 'form',
+			// one time action per form
+			link: function(scope, element, iAttrs, form) {
+				form.$submitted = false;
+				// get a hold of the function that handles submission when form is valid
+				var fn = $parse(iAttrs.validSubmit);
+				// register DOM event handler and wire into Angular's lifecycle with scope.$apply
+				element.on('submit', function(event) {
+					scope.$apply(function() {
+						// on submit event, set submitted to true (like the previous trick)
+						form.$submitted = true;
+						// if form is valid, execute the submission handler function and reset form submission state
+						//deactivate submission form to prevent rapid submission
+						if (form.$valid) {
+							element[0].getElementsByClassName("btn")[0].setAttribute("disabled", "true");
+							fn(scope, { $event : event });
+							form.$submitted = false;
+						}
+					});
+				});
+			}
+		};
 	}
+	]);
+
+
+// handle form submission when the form is completely valid
+
+app.controller('ContactCtrl', function($scope, $http, $element){
+	$scope.successful = false;
+
+	$scope.submit = function(){
+		//send form content to formspree service for submission to fff email
+		//Re-enable send button on return
+		$http.post("https://formspree.io/mbjzdjlw", $scope.contact).then(function(response){
+			$scope.successful = true;
+			$element[0].getElementsByClassName("btn")[0].removeAttribute("disabled");
+			angular.forEach($scope.contact, function(value, key){
+				$scope.contact[key] = "";
+			});
+		});
+	}
+
 });
 
 

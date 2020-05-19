@@ -102,14 +102,14 @@
 					<div class = "year-title" ng-click = "showYear($event)">{{ yearList.year }}</div>
 				</div>
 				<div class = "event-lists">
-					<div class = "event-card" ng-repeat="event in yearList.events">
+					<div class = "event-card unfocused" ng-repeat="event in yearList.events">
 						<div class = "main-image"><img ng-src="{{ event.main_image }}"></div>
 						<div class ="details">
 							<div class = "title">{{ event.title }}</div>
 							<div class = "content" ng-bind-html ="render(event.description)"></div>
 							<div class = "card-footer">
 								<div class = "date">{{event.start_date}}</div>
-								<div class = "btn read-more">Read More</div>
+								<div class = "btn read-more" ng-click="eventFocus(event)">Read More</div>
 							</div>
 						</div>
 					</div>
@@ -124,32 +124,41 @@
 <section class = "contact" id = "contact" ng-controller = "ContactCtrl">
 	<h1 class = "section-title">Contact Us</h1>
 	<div class = "row contact-form justify-content-center">
-		<form class = "col-10 col-xl-5" ng-submit="submit()">
+		<form class = "col-10 col-xl-5" id = "form" name = "form" valid-submit="submit()" novalidate>
 			<div class = "row">
-				<div class="form-group col-6" data->
+				<div class="form-group col-6">
 					<label for="first-name">First Name</label>
-					<input type="first-name" class="form-control" id="first-name" placeholder="First">
+					<input type="first-name" class="form-control" ng-class="{'has-error': form.$submitted && form.first.$invalid}" id="first-name" name = "first" ng-model = "contact.first"  placeholder="First"  required>
+					<span class="alert" ng-show="form.$submitted && form.first.$error.required">Please include at least a first name</span>
 				</div>
 				<div class="form-group col-6">
 					<label for="last-name">Last Name</label>
-					<input type="last-name" class="form-control" id="last-name" placeholder="Last">
+					<input type="last-name" class="form-control" id="last-name" name = "last-name" ng-model = "contact.last" placeholder="Last">
 				</div>
 			
 			<div class="form-group col-12">
 				<label for="email">Email address</label>
-				<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" data-constraints="@Required">
+				<input type="email" class="form-control" ng-class = "{'has-error': form.$submitted && form.email.$invalid}" id="email" name = "email" ng-model = "contact.email" aria-describedby="emailHelp" placeholder="Enter email" required>
+				<span class="alert" ng-show="form.$submitted && form.email.$error.required">Email is required.</span>
+        		<span class="alert" ng-show="form.$submitted && form.email.$error.email">Invalid Email address</span>
 				<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 			</div>
 			<div class="form-group message col-12">
 				<label for="message">Message</label>
-				<textarea class="form-control" id="message" rows="3" data-constraints="@Required"></textarea>
+				<textarea class="form-control" id="message" ng-class = "{'has-error': form.$submitted && form.message.$invalid}" name = "message" ng-model = "contact.message" rows="3" placeholder = "Send us a quick message!" required></textarea>
+				<span class="alert" ng-show="form.$submitted && form.message.$error.required">Please include a quick message</span>
 			</div>
+			<div class ="col-12">
 			<button type="submit" class="btn btn-primary submit">Submit</button>
-			</div>
+			<span class = "successful" ng-show="successful">Thank you for your message! We will get back to you ASAP.</span>
+			</div></div>
 		</form>
 	</div>
 </section>
-<section class = "footer"></section>
+<section class = "footer">
+	<div class = "row justify-content-end">
+	<div  class = "icons"><a class="facebook" href = "www.facebook.com"></a><a class="instagram" href = ""></a></div></div>
+</section>
 </body>
 </html>
 
