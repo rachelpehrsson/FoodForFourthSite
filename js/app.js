@@ -7,6 +7,32 @@ app.config(['$locationProvider', function($locationProvider) {
 	});
 }]);
 
+app.directive('scrollUp',['$window', '$document', '$timeout', function($window, $document, $timeout) {
+	return{
+		restrict: "C",
+		link: function(element){
+			var scrollUp = document.getElementsByClassName('scroll-up')[0];
+			document.onscroll = function() {
+				var y = $(this).scrollTop();
+				if (y > 200) {
+					scrollUp.classList.add("active");
+				} else {
+					scrollUp.classList.remove("active");
+				}
+			};
+
+			scrollUp.onclick = function(){
+				$('html, body').animate({scrollTop:0}, 'slow');
+			}
+		}
+	}
+}]);
+
+
+// $('div.scroll-up.active').click(function(){
+// 	$(window).scrollTop(0);
+// });
+
 app.controller('NavBar', ['$scope', '$location', function($scope, $location){
 	$scope.isActive = function(page){
 		var current = $location.path().substring(1) || 'home';
@@ -40,7 +66,7 @@ app.directive("focusedEventPop",['$compile', '$http', function($compile, $http){
 		restrict : 'E',
 		//change to url when in a server?
 		template:'<div class = "overlay"><div class ="focused-event"><div class = "toolbar"><div class = "date">{{ focusedEvent.start_date }}</div><div class = "btn close-focus" ng-click="closeFocus()">'+
-		'Close</div></div><div class = "main-image"><img ng-src="{{ focusedEvent.main_image }}"></div><div class = "details"><div class = "title">{{ focusedEvent.title }}</div>'+
+		'Close</div></div><div class = "main-image" ng-show = "focusedEvent.main_image.length > 0"><img ng-src="{{ focusedEvent.main_image }}"></div><div class = "details"><div class = "title">{{ focusedEvent.title }}</div>'+
 		'<div class = "content" ng-bind-html ="render(focusedEvent.description)"></div></div></div></div>'
 	}
 }]);

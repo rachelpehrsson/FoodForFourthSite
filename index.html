@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html ng-app="foodFourth" lang = "en">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <head>
 	<script 
 	src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js">
 </script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
 <script src="content/past-events-list.jsonp"></script>
 <script src="js/app.js"></script>
+<link rel="stylesheet" href ="resources/fonts/haettenschweiler.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<nav class ="navbar navbar-stripe navbar-expand-lg" ng-controller="NavBar" data-ng-init="init()">
+	<div class = "scroll-up"></div>
+	<nav class ="navbar navbar-stripe navbar-expand-md" ng-controller="NavBar" data-ng-init="init()">
 		<div class="container-fluid">
 			<div class = "collapse navbar-collapse" id = "fffNavbar">
 				<ul class = "nav navbar-nav">
+					<li class = "isActive('covid')"><a for = "covid" ng-click = "appNav($event)">Food Banks and COVID-19</a></li>
 					<li class = "isActive('mission')"><a for = "mission" ng-click = "appNav($event)">Our Mission</a></li>
 					<li class = "isActive('team')"><a for = "ourteam" ng-click = "appNav($event)">Our Team</a></li>
 					<li class = "isActive('past-events')"><a for = "past-events" ng-click = "appNav($event)">Past Events</a></li>
-					<li class = "isActive('Calendar')"><a for = "calendar" ng-click = "appNav($event)">Calendar</a></li>
+					<!--TODO: build calendar section-->
+					<!--<li class = "isActive('Calendar')"><a for = "calendar" ng-click = "appNav($event)">Calendar</a></li>-->
 					<li class = "isActive('Contact')"><a for="contact" ng-click = "appNav($event)">Contact</a></li>
 				</ul>
 			</div>
@@ -30,21 +35,38 @@
 	</nav>
 	<section class = "banner">
 		<div class = "row justify-content-center">
-			<div class = "col-2"><div class="icon"> <img src="resources/fff-icon.png"></div></div>
-			<div class = "col-5 tagline">
-				<div class = "logo">Food <span>for the</span> Fourth</div>
+			<div class = "col-3 col-sm-4" style = "padding:0px;"><div class="icon"> <img src="resources/fff-icon.png"></div></div>
+			<div class = "col-md-6 col-sm-8 tagline" style = "padding:0px">
+				
+				<div class = "logo"><div class = "expanded">Food </div><span class = "unexpanded">for the</span><div class = "expanded"> Fourth</div></div>
+				
 				<div class ="statistic"><span>40 million Americans</span> are food insecure.</div>
-				<div style = "padding-left: 90px; padding-top: 20px"> Join the movement for </br>a new holiday spirit</div>
+				
+				<div class ="declaration"> Join the movement for <span class = "break">a new holiday spirit</span></div>
 			</div>
 		</div>
 	</section>
+	<section class = "covid" id="covid" name = "covid">
+		<h1 class = "section-title" style = "color:var(--color-navy)">Food Banks During <span style = "color:var(--color-neublue)">COVID-19</span></h1>
+		<div class="row justify-content-center">
+			<div class = "col-lg-10 col-md-11" style = "font-size: 1.3em" >
+				<p>Millions are out of work or struggling financially due to COVID-19. Children have lost access to their schools' food services months ahead of schedule.</p> 
+					<p style ="font-size: 1.5em"><span class ="emphasized">Now more than ever, our fellow Americans need our help.</span> </p><p>However, as food bank donation has become more crucial, it has also become more complicated. Health risks prevent many food banks from accepting direct food donation. Still, <strong>hope is not lost.</strong> There are still several ways to support your community in this trying time.</p>
+				<h5 style = "font-weight: bold">The following services are working to keep America fed during the pandemic while accepting monetary donations:</h5>
+				<ul>
+					<li><strong>Local Food Banks,</strong> check the website of your local food bank for information on making a monetary donation.</li>
+					<li><strong><a href = "https://www.mealsonwheelsamerica.org/">Meals on Wheels</a></strong>, a delivery meal service for the elderly and underprivileged. Check to see if there is a local chapter for your community.</li>
+					<li><strong><a href = "https://www.feedingamerica.org/">Feeding America</a></strong>, a major national network for food services across the USA.</li>
+				</ul>
+			</div></div>
+	</section>
 	<section class = "fact-sheet">
-		<div class = "container">
+		<div class = "container-fluid">
 			<div class ="row">
-				<div class = "col-5 did-you-know">
+				<div class = "col-lg-5 col-md-12 did-you-know">
 					<h1>Did you know?</h1>
 				</div>
-				<div class = "col-7">
+				<div class = "col-lg-6 col-md-12">
 					<ul class = "fact-list">
 						<li class = "statistic"><span>1 in 7 Americans</span> are served by food banks</li>
 						<li class = "statistic"><span>72%</span> of food banks struggle to adequately serve their communities</li>
@@ -52,15 +74,22 @@
 						<li class = "statistic"><span>1 in 6</span> children with free and reduced lunches continue to receive meal services during vacation</li>
 						<li class = "statistic">Food banks often see their<span> lowest donation rates of the year</span> in the summer months</li>
 					</ul>
+					<div class = "row justify-content-center citing">
+						<div class = "sources">
+							<p>"Hunger Statistics, Hunger Facts & Poverty Facts | Feeding America" Feeding America." Feeding America. http://feedingamerica.org/hunger-in-america/hunger-facts/hunger-and-poverty-statistics.aspx</p>
+							<p>"Supporting a Local Food Bark." United We Serve. http://www.serve.gov/sites/default/files/food-bank.pdf. </p></div>
+						</div>
+					</div>
 				</div>
+
 			</div>
 		</div>
 	</section>
 	<section class = "mission" id = "mission" name ="mission">
 		<h1 class = "section-title">Our Mission</h1>
 		<div class="row justify-content-center">
-			<div class = "col-10">
-				<p><span class ="emphasized">Food for the Fourth </span>was born from a little idea in the mind of a Girl Scout. Our founder, Rachel Pehrsson, was planning her Gold Award project at the <a href="https://lortonaction.org/">Lorton Community Action Center food bank</a> when the then-director made an offhand comment: summer is by far the roughest time for donations. He attributed this trend to the lack of “giving holidays”--meaning, in fall and winter, community members are motivated to donate thanks to Thanksgiving and Christmas. Summer, on the other hand, often leaves them running dry.  This is in spite of summer being the time many families need donations the most, as children are no longer getting food services from school.</p>
+			<div class = "col-lg-10 col-md-11">
+				<p><span class ="emphasized">Food for the Fourth </span>was born from a little idea in the mind of a Girl Scout. Our founder, Rachel Pehrsson, was planning her Gold Award project at the <a href="https://lortonaction.org/">Lorton Community Action Center food bank</a> when the then-director made an offhand comment: summer is by far the roughest time for donations. He attributed this trend to the lack of “giving holidays”&#151;meaning, in fall and winter, community members are motivated to donate thanks to Thanksgiving and Christmas. Summer, on the other hand, often leaves them running dry.  This is in spite of summer being the time many families need donations the most, as children are no longer getting food services from school.</p>
 				<p><span class = "emphasized">Food for the Fourth</span> has a mission to turn the Fourth of July into the giving holiday that food banks need. We aim to spread awareness of the needs of food banks during the summer and promote events to garner support and donations. </p>
 				<p style = "font-weight:bold; color:var(--color-neublue)">We believe that the best way to express patriotism is through service and kindness towards our fellow man, and that every little bit of charity can make the country better, one can at a time. </p>
 			</div>
@@ -103,7 +132,7 @@
 				</div>
 				<div class = "event-lists">
 					<div class = "event-card unfocused" ng-repeat="event in yearList.events">
-						<div class = "main-image"><img ng-src="{{ event.main_image }}"></div>
+						<div class = "main-image" ng-show = "event.main_image != ''"><img ng-src="{{ event.main_image }}"></div>
 						<div class ="details">
 							<div class = "title">{{ event.title }}</div>
 							<div class = "content" ng-bind-html ="render(event.description)"></div>
@@ -118,13 +147,13 @@
 		</div>
 	</div>
 </section>
-<section class ="calendar" id="calendar" ng-controller="CalendarCtrl">
+<!--<section class ="calendar" id="calendar" ng-controller="CalendarCtrl">
 	<h1 class = "section-title">Calendar</h1>
-</section>
+</section>-->
 <section class = "contact" id = "contact" ng-controller = "ContactCtrl">
 	<h1 class = "section-title">Contact Us</h1>
 	<div class = "row contact-form justify-content-center">
-		<form class = "col-10 col-xl-5" id = "form" name = "form" valid-submit="submit()" novalidate>
+		<form class = "col-12  col-md-10 col-xl-5" id = "form" name = "form" valid-submit="submit()" novalidate>
 			<div class = "row">
 				<div class="form-group col-6">
 					<label for="first-name">First Name</label>
@@ -135,30 +164,31 @@
 					<label for="last-name">Last Name</label>
 					<input type="last-name" class="form-control" id="last-name" name = "last-name" ng-model = "contact.last" placeholder="Last">
 				</div>
-			
-			<div class="form-group col-12">
-				<label for="email">Email address</label>
-				<input type="email" class="form-control" ng-class = "{'has-error': form.$submitted && form.email.$invalid}" id="email" name = "email" ng-model = "contact.email" aria-describedby="emailHelp" placeholder="Enter email" required>
-				<span class="alert" ng-show="form.$submitted && form.email.$error.required">Email is required.</span>
-        		<span class="alert" ng-show="form.$submitted && form.email.$error.email">Invalid Email address</span>
-				<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-			</div>
-			<div class="form-group message col-12">
-				<label for="message">Message</label>
-				<textarea class="form-control" id="message" ng-class = "{'has-error': form.$submitted && form.message.$invalid}" name = "message" ng-model = "contact.message" rows="3" placeholder = "Send us a quick message!" required></textarea>
-				<span class="alert" ng-show="form.$submitted && form.message.$error.required">Please include a quick message</span>
-			</div>
-			<div class ="col-12">
-			<button type="submit" class="btn btn-primary submit">Submit</button>
-			<span class = "successful" ng-show="successful">Thank you for your message! We will get back to you ASAP.</span>
-			</div></div>
-		</form>
-	</div>
-</section>
-<section class = "footer">
-	<div class = "row justify-content-end">
-	<div  class = "icons"><a class="facebook" href = "www.facebook.com"></a><a class="instagram" href = ""></a></div></div>
-</section>
-</body>
-</html>
+
+				<div class="form-group col-12">
+					<label for="email">Email address</label>
+					<input type="email" class="form-control" ng-class = "{'has-error': form.$submitted && form.email.$invalid}" id="email" name = "email" ng-model = "contact.email" aria-describedby="emailHelp" placeholder="Enter email" required>
+					<span class="alert" ng-show="form.$submitted && form.email.$error.required">Email is required.</span>
+					<span class="alert" ng-show="form.$submitted && form.email.$error.email">Invalid Email address</span>
+					<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+				</div>
+				<div class="form-group message col-12">
+					<label for="message">Message</label>
+					<textarea class="form-control" id="message" ng-class = "{'has-error': form.$submitted && form.message.$invalid}" name = "message" ng-model = "contact.message" rows="3" placeholder = "Send us a quick message!" required></textarea>
+					<span class="alert" ng-show="form.$submitted && form.message.$error.required">Please include a quick message</span>
+				</div>
+				<div class ="col-12">
+					<button type="submit" class="btn btn-primary submit">Submit</button>
+					<span class = "successful" ng-show="successful">Thank you for your message! We will get back to you ASAP.</span>
+				</div></div>
+			</form>
+		</div>
+	</section>
+	
+	<section class = "footer">
+		<div class = "row justify-content-end">
+			<div  class = "icons"><a class="facebook" href = "https://www.facebook.com/foodforfourth/?modal=admin_todo_tour"></a><a class="instagram" href = ""></a></div></div>
+		</section>
+	</body>
+	</html>
 
