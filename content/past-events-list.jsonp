@@ -1,5 +1,18 @@
 pastData = [
 {
+	"year":"2020",
+	"events": [
+		{
+			"title": "Juneteenth Funds for F.A.R.M.S",
+			"location": "facebook.com",
+			"start_date": "6/18/2020",
+			"end_date": "6/22/2020", 
+			"main_image": "resources/events-2020/fundraiser-block-final.png",
+			"description": "<p>Independence Day is incomplete without Juneteenth.</p><p>To honor the historic liberation of Black Americans and the nationwide protests against racially-targeted systemic violence, Food for the Fourth hosted a Facebook fundraiser to benefit <a href = 'https://www.30000acres.org' target='_blank'>F.A.R.M.S</a>, a Black-run nonprofit that provides support to small farm owned by people of color and food banks in low-income rural areas. Thanks to dozens of generous donors, we managed to raise a total of <span class='emphasized'>$1,540</span> over the Juneteenth weekend. Jillian Hishaw, the director of F.A.R.M.S, stated that this money will go towards purchasing fall produce for food banks. We cannot thank her enough for her cooperation with FFF and hard work in reducing food insecurity across the nation!</p><p>Thank you again to all who donated! May the summer be a time of perserverance and progress for the communities of this nation.</p>"
+		}
+	]
+},
+{
 	"year":"2019",
 	"events": [
 		{
@@ -16,7 +29,7 @@ pastData = [
 			"start_date": "7/6/2019",
 			"end_date": "7/13/2019", 
 			"main_image": "resources/events-2019/dropoff.jpg",
-			"description": "<p>To supplement our efforts towards spreading awareness, FOTF also organized local food drives for the benefit the <a>Lancaster County Food Hub.</a> Timbrel Chyatee of Lush Bazaar in downtown Lancaster graciously hosted our dropbox at her shop. We finished off the event by leading a collection wagon to collect donations door-to-door. It was a great way to introduce ourselves to the local community and get some direct feedback! Thanks to the generosity of Lancaster's local community, we managed to fill both the box and the wagon.</p><p>The Food Hub was very pleased with our results! We'd like to thank everyone who donated for making a difference--even a single can is a boost for someone in need.</p>"
+			"description": "<p>To supplement our efforts towards spreading awareness, FFF also organized local food drives for the benefit the <a>Lancaster County Food Hub.</a> Timbrel Chyatee of Lush Bazaar in downtown Lancaster graciously hosted our dropbox at her shop. We finished off the event by leading a collection wagon to collect donations door-to-door. It was a great way to introduce ourselves to the local community and get some direct feedback! Thanks to the generosity of Lancaster's local community, we managed to fill both the box and the wagon.</p><p>The Food Hub was very pleased with our results! We'd like to thank everyone who donated for making a difference--even a single can is a boost for someone in need.</p>"
 		},
 		{
 			"title": "Tabling at Lancaster Pride Festival 2019",
