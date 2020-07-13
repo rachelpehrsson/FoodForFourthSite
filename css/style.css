@@ -58,6 +58,8 @@ a:hover{
 	height:60px;
 	opacity: 0;
 	z-index: 100;
+	display: flex;
+	justify-content: center;
 	bottom:12%;
 	transition: opacity .3s;
 	right:5%;
@@ -79,7 +81,6 @@ a:hover{
     align-items: center;
     transform: rotate(180deg);
     content: "\25BE";
-    width: 92%;
     height: 100%;
 }
 .navbar-stripe{
@@ -532,7 +533,7 @@ img.team-portrait{
   right: 0;
   bottom: 0;
   background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  z-index: 200; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
 }
 
@@ -551,6 +552,8 @@ img.team-portrait{
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
   font-family: var(--font-mont);
+  z-index: 250;
+  cursor: default !important;
 }
 
 

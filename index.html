@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="foodFourth" lang = "en">
+<html ng-app="foodFourthIndex" lang = "en">
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <head>
 	<script 
@@ -15,6 +15,7 @@
 <script src="js/app.js"></script>
 <link rel="stylesheet" href ="resources/fonts/haettenschweiler.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="resources/fff-icon.png">
 </head>
 <body>
 	<div class = "scroll-up"></div>
@@ -22,13 +23,13 @@
 		<div class="container-fluid">
 			<div class = "collapse navbar-collapse" id = "fffNavbar">
 				<ul class = "nav navbar-nav">
-					<li class = "isActive('covid')"><a for = "covid" ng-click = "appNav($event)">Food Banks and COVID-19</a></li>
-					<li class = "isActive('mission')"><a for = "mission" ng-click = "appNav($event)">Our Mission</a></li>
-					<li class = "isActive('team')"><a for = "ourteam" ng-click = "appNav($event)">Our Team</a></li>
-					<li class = "isActive('past-events')"><a for = "past-events" ng-click = "appNav($event)">Past Events</a></li>
+					<li ng-class = "isActive('covid')"><a for = "covid" ng-click = "appNav($event)">Food Banks and COVID-19</a></li>
+					<li ng-class = "isActive('mission')"><a for = "mission" ng-click = "appNav($event)">Our Mission</a></li>
+					<li ng-class = "isActive('ourteam')"><a for = "ourteam" ng-click = "appNav($event)">Our Team</a></li>
+					<li ng-class = "isActive('past-events')"><a for = "past-events" ng-click = "appNav($event)">Past Events</a></li>
 					<!--TODO: build calendar section-->
 					<!--<li class = "isActive('Calendar')"><a for = "calendar" ng-click = "appNav($event)">Calendar</a></li>-->
-					<li class = "isActive('Contact')"><a for="contact" ng-click = "appNav($event)">Contact</a></li>
+					<li ng-class = "isActive('contact')"><a for="contact" ng-click = "appNav($event)">Contact</a></li>
 				</ul>
 			</div>
 		</div>
@@ -90,7 +91,7 @@
 		<h1 class = "section-title">Our Mission</h1>
 		<div class="row justify-content-center">
 			<div class = "col-lg-10 col-md-11">
-				<p><span class ="emphasized">Food for the Fourth </span>was born from a little idea in the mind of a Girl Scout. Our founder, Rachel Pehrsson, was planning her Gold Award project at the <a href="https://lortonaction.org/">Lorton Community Action Center food bank</a> when the then-director made an offhand comment: summer is by far the roughest time for donations. He attributed this trend to the lack of “giving holidays”&#151;meaning, in fall and winter, community members are motivated to donate thanks to Thanksgiving and Christmas. Summer, on the other hand, often leaves them running dry.  This is in spite of summer being the time many families need donations the most, as children are no longer getting food services from school.</p>
+				<p><span class ="emphasized">Food for the Fourth </span>was born from a little idea in the mind of a Girl Scout. Our founder, Rachel Pehrsson, was planning her Gold Award project at the <a href="https://lortonaction.org/" target='_blank'>Lorton Community Action Center food bank</a> when the then-director made an offhand comment: summer is by far the roughest time for donations. He attributed this trend to the lack of “giving holidays”&#151;meaning, in fall and winter, community members are motivated to donate thanks to Thanksgiving and Christmas. Summer, on the other hand, often leaves them running dry.  This is in spite of summer being the time many families need donations the most, as children are no longer getting food services from school.</p>
 				<p><span class = "emphasized">Food for the Fourth</span> has a mission to turn the Fourth of July into the giving holiday that food banks need. We aim to spread awareness of the needs of food banks during the summer and promote events to garner support and donations. </p>
 				<p style = "font-weight:bold; color:var(--color-neublue)">We believe that the best way to express patriotism is through service and kindness towards our fellow man, and that every little bit of charity can make the country better, one can at a time. </p>
 			</div>
@@ -188,7 +189,7 @@
 	
 	<section class = "footer">
 		<div class = "row justify-content-end">
-			<div  class = "icons"><a class="facebook" href = "https://www.facebook.com/foodforfourth/?modal=admin_todo_tour"></a><a class="instagram" href = ""></a></div></div>
+			<div  class = "icons"><a class="facebook" href = "https://www.facebook.com/foodforfourth/" target='_blank'></a><a class="instagram" href = "https://www.instagram.com/foodfourth/" target='_blank'></a></div></div>
 		</section>
 	</body>
 	</html>
