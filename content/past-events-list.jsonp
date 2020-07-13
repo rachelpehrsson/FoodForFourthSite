@@ -29,7 +29,7 @@ pastData = [
 			"start_date": "7/6/2019",
 			"end_date": "7/13/2019", 
 			"main_image": "resources/events-2019/dropoff.jpg",
-			"description": "<p>To supplement our efforts towards spreading awareness, FFF also organized local food drives for the benefit the <a>Lancaster County Food Hub.</a> Timbrel Chyatee of Lush Bazaar in downtown Lancaster graciously hosted our dropbox at her shop. We finished off the event by leading a collection wagon to collect donations door-to-door. It was a great way to introduce ourselves to the local community and get some direct feedback! Thanks to the generosity of Lancaster's local community, we managed to fill both the box and the wagon.</p><p>The Food Hub was very pleased with our results! We'd like to thank everyone who donated for making a difference--even a single can is a boost for someone in need.</p>"
+			"description": "<p>To supplement our efforts towards spreading awareness, FFF also organized local food drives for the benefit the <a href='https://lortonaction.org/' target='_blank'>Lancaster County Food Hub.</a> Timbrel Chyatee of Lush Bazaar in downtown Lancaster graciously hosted our dropbox at her shop. We finished off the event by leading a collection wagon to collect donations door-to-door. It was a great way to introduce ourselves to the local community and get some direct feedback! Thanks to the generosity of Lancaster's local community, we managed to fill both the box and the wagon.</p><p>The Food Hub was very pleased with our results! We'd like to thank everyone who donated for making a difference--even a single can is a boost for someone in need.</p>"
 		},
 		{
 			"title": "Tabling at Lancaster Pride Festival 2019",
