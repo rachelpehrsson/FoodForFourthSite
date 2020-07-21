@@ -98,6 +98,7 @@ a:hover{
 	font-size: 30px;
 	transition: color .3s;
 	letter-spacing: 2px;
+	font-weight: normal;
 }
 .navbar-stripe a::before{
 	content: "\2605";
