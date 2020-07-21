@@ -42,6 +42,7 @@ section{
 
 a{
 	color:var(--color-neublue);
+	font-weight: bold;
 }
 a:hover{
 	text-decoration: none;
@@ -576,11 +577,11 @@ img.team-portrait{
 	top:-75%;
 }
 
-@media(min-width:680px){
+/*@media(min-width:680px){
 	.focused-event .main-image img{
 	top:-125%;
 	}
-}
+}*/
 
 .focused-event .title{
 	font-size: 2em;

@@ -1,44 +1,48 @@
 pastData = [
-{
-	"year":"2020",
-	"events": [
+		{
+			"title": "Firework Food Drive 2020",
+			"location": "West End Lancaster PA",
+			"start_date": "7/12/2020",
+			"end_date": "7/19/2020", 
+			"id" : "005", 
+			"main_image": "resources/events-2020/food_drive_donations.jpg",
+			"description": "<p>Food for the Fourth was thrilled to run our second annual <span class='emphasized'>Firework Food Drive</span> benefitting <a href='https://lancasterfoodhub.org/' target='_blank'>Lancaster County Food Hub</a>! We tried a new technique this year, thanks both to feedback from last year's drive and concern for everyone's safety in the pandemic. A week before the drive, we left save-the-date notecards on our neighbor's doors, telling them to leave food on their front porch by a certain time on the 19th along with guidelines for donations. Then, come the 19th, we took to the street again to pick up our neighbor's contributions! Thanks to this new system and the generosity of our community, we <span class='emphasized'>doubled</span> our intake from last year, collecting everything from canned pumpkin to toothbrushes!</p><p>As the pandemic continues to rage through America with no clear sign of stopping, our communities need now more than ever to show support to those at risk. We cannot give enough thanks to those who donated!</p>"
+		},
 		{
 			"title": "Juneteenth Funds for F.A.R.M.S",
 			"location": "facebook.com",
 			"start_date": "6/18/2020",
 			"end_date": "6/22/2020", 
+			"id" : "004", 
 			"main_image": "resources/events-2020/fundraiser-block-final.png",
 			"description": "<p>Independence Day is incomplete without Juneteenth.</p><p>To honor the historic liberation of Black Americans and the nationwide protests against racially-targeted systemic violence, Food for the Fourth hosted a Facebook fundraiser to benefit <a href = 'https://www.30000acres.org' target='_blank'>F.A.R.M.S</a>, a Black-run nonprofit that provides support to small farm owned by people of color and food banks in low-income rural areas. Thanks to dozens of generous donors, we managed to raise a total of <span class='emphasized'>$1,540</span> over the Juneteenth weekend. Jillian Hishaw, the director of F.A.R.M.S, stated that this money will go towards purchasing fall produce for food banks. We cannot thank her enough for her cooperation with FFF and hard work in reducing food insecurity across the nation!</p><p>Thank you again to all who donated! May the summer be a time of perserverance and progress for the communities of this nation.</p>"
-		}
-	]
-},
-{
-	"year":"2019",
-	"events": [
+		},
 		{
 			"title": "Flier Bomb at Lititz Fourth of July",
 			"location": "Springs Park, Lititz, PA",
 			"start_date": "7/4/2019",
 			"end_date": "7/4/2019", 
+			"id" :"003", 
 			"main_image": "resources/events-2019/flier-bomb2019.jpg",
 			"description": "<p>Food for the Fourth kicked off our first ever event with some old-fashioned grassroots fliering. Our president attended the annual Lititz Fourth of July celebration with info cards listing the facts on the role of food banks in America and encouraging donation during the Independence day season. Over the course of the day, she distributed over 500 cards to celebration attendees. Response was highly positive, and several attendees expressed interest in donating to the Firework Food Drive to be held later that week.</p><p>Food for the Fourth hopes to expand our presence at the Lititz Fourth of July 2020.</p>"
 		},
 		{
-			"title": "Firework Food Drive",
+			"title": "Firework Food Drive 2019",
 			"location": "Lush Bazaar in Lancaster, PA",
 			"start_date": "7/6/2019",
 			"end_date": "7/13/2019", 
+			"id" :"002", 
 			"main_image": "resources/events-2019/dropoff.jpg",
-			"description": "<p>To supplement our efforts towards spreading awareness, FFF also organized local food drives for the benefit the <a href='https://lortonaction.org/' target='_blank'>Lancaster County Food Hub.</a> Timbrel Chyatee of Lush Bazaar in downtown Lancaster graciously hosted our dropbox at her shop. We finished off the event by leading a collection wagon to collect donations door-to-door. It was a great way to introduce ourselves to the local community and get some direct feedback! Thanks to the generosity of Lancaster's local community, we managed to fill both the box and the wagon.</p><p>The Food Hub was very pleased with our results! We'd like to thank everyone who donated for making a difference--even a single can is a boost for someone in need.</p>"
+			"description": "<p>To supplement our efforts towards spreading awareness, FFF also organized local food drives for the benefit the <a href='https://lancasterfoodhub.org/' target='_blank'>Lancaster County Food Hub.</a> Timbrel Chyatee of <a href='https://lushbazaar.square.site/' target='_blank'>Lush Bazaar</a> in downtown Lancaster graciously hosted our dropbox at her shop. We finished off the event by leading a collection wagon to collect donations door-to-door. It was a great way to introduce ourselves to the local community and get some direct feedback! Thanks to the generosity of Lancaster's local community, we managed to fill both the box and the wagon.</p><p>The Food Hub was very pleased with our results! We'd like to thank everyone who donated for making a difference--even a single can is a boost for someone in need.</p>"
 		},
 		{
 			"title": "Tabling at Lancaster Pride Festival 2019",
 			"location": "Clipper Magazine Stadium",
 			"start_date": "7/20/2019",
-			"end_date": "7/20/2019", 
-			"main_image": "",
+			"end_date": "7/20/2019",
+			"id" : "001", 
+			"main_image": "resources/events-2019/new-pride-flag-01.jpg",
 			"description": "<p>Food for the Fourth finished off our 2019 season with promotion at the 2019 Lancaster County Pride Festival! The LGBT community disproportionately faces poverty in America, making food banks especially important. We promoted the numerous food banks with policies of non-descrimination, including our ally the Lancaster County Food Hub. Several members of the community approached us to thank us for our efforts, describing the roles that food banks have served in their own lives. We thank you all again for your support, and hope to see you next year!</p>"
 		}
-	]
-}
+	
 ];

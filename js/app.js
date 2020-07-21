@@ -56,22 +56,55 @@ fffIndex.controller('NavBar', ['$scope', '$location', function($scope, $location
 
 
 fffIndex.service("EventsParser", ['$location', function($location){
-	var past_events = pastData;
+	var past_events = pastData.sort(function(event1, event2){
+			var date1 = new Date(event1.start_date);
+			var date2 = new Date(event2.start_date);
+			var dateDiff = date2 - date1;
+			if(dateDiff == 0){
+				var enddate1 = new Date(event1.end_date);
+				var enddate2 = new Date(event2.end_date);
+				dateDiff = enddate2 - enddate2;
+			}
+			return dateDiff;
+		});
+	var year_to_past_event_ids = {};
+	var event_ids_to_data = {};
 	var upcoming_events = "";
-	this.getPastEvents = function(){
-		return past_events;
+	angular.forEach(past_events, function(pastEvent){
+			event_ids_to_data[pastEvent.id] = pastEvent;
+			var eventDate = new Date(pastEvent.start_date);
+			if(!(eventDate.getFullYear() in year_to_past_event_ids)){
+				year_to_past_event_ids[eventDate.getFullYear().toString()] = new Array();
+			}
+			// var eventList = yearToPastEvents[eventDate.getFullYear()];
+			// eventList.push(pastEvent); 
+			year_to_past_event_ids[eventDate.getFullYear().toString()].push(pastEvent.id);
+		});
+		
+	//Object with fields of each year, pointing list of event data
+	this.getPastEventsByYear = function(){
+		return year_to_past_event_ids;
+	}
+	this.getPastEventsById = function(){
+		return event_ids_to_data;
 	}
 	this.updateURLWithEvent = function(eventData){
-		$location.search('e',eventData.start_date.replace("/", "").replace("/", ""));
+		$location.search('e',eventData.id);
 	}
 
 }]);
+
+fffIndex.filter('year_reverse', function() {
+  return function(yearToEvents) {
+    return Object.keys(yearToEvents).reverse();
+  };
+});
 
 fffIndex.directive("focusedEventPop",['$compile', '$http', function($compile, $http){
 	return{
 		restrict : 'E',
 		//change to url when in a server?
-		template:'<div class = "overlay" ng-click="closeFocus($event)"><div class ="focused-event"><div class = "toolbar"><div class = "date">{{ focusedEvent.start_date }}</div><div class = "btn close-focus" ng-click="closeFocus($event)">'+
+		template:'<div class = "overlay" ng-click="closeFocus($event)"><div class ="focused-event"><div class = "toolbar"><div class = "date">{{ focusedEvent | dateRange }}</div><div class = "btn close-focus" ng-click="closeFocus($event)">'+
 		'Close</div></div><div class = "main-image" ng-show = "focusedEvent.main_image.length > 0"><img ng-src="{{ focusedEvent.main_image }}"></div><div class = "details"><div class = "title">{{ focusedEvent.title }}</div>'+
 		'<div class = "content" ng-bind-html ="render(focusedEvent.description)"></div></div></div></div>'
 	}
@@ -87,7 +120,8 @@ fffIndex.directive("focusedEventPop",['$compile', '$http', function($compile, $h
 
 fffIndex.controller('PastEventsCtrl', function($scope, $sce, $element, $compile, $location, EventsParser){
 	// var past_events = pastData;
-	$scope.past_events_by_year = EventsParser.getPastEvents();
+	$scope.past_events_by_year = EventsParser.getPastEventsByYear();
+	$scope.event_ids_to_data = EventsParser.getPastEventsById();
 	var search = $location.search();
 	$scope.showYear = function(e){ 
 		e.currentTarget.parentNode.parentNode.classList.toggle("active");
@@ -97,8 +131,10 @@ fffIndex.controller('PastEventsCtrl', function($scope, $sce, $element, $compile,
 	}
 	$scope.eventFocus = function(event){
 		$scope.focusedEvent = event;
+		$location.hash(null);
 		EventsParser.updateURLWithEvent(event);
 		var newElement = $compile("<focused-event-pop></focused-event-pop>")( $scope );
+		$('body').css('overflow','hidden');
 		$element.append(newElement);
 	}
 
@@ -106,23 +142,32 @@ fffIndex.controller('PastEventsCtrl', function($scope, $sce, $element, $compile,
 		if(e.target.className == "overlay" || e.target.classList.contains("close-focus")){
 		$location.search('e', null);
 		$element[0].getElementsByTagName("focused-event-pop")[0].remove();
+		$('body').css('overflow','');
 	}
 	};
 
 	if(search.hasOwnProperty('e') && search['e'].length>0){
 		$location.hash('past-events');
-		var eventYear = search['e'].substring(search['e'].length-4);
-			angular.forEach($scope.past_events_by_year, function(value, key){
-			if(value.year == eventYear){
-			angular.forEach(value.events, function(value2){	
-				if(value2.start_date.replace("/", "").replace("/", "") == search['e'])
-					$scope.eventFocus(value2);
-				});
-			}
-		});
-		//$location.hash('');
-	}
+		var eventId = search['e'];
+		if(eventId in $scope.event_ids_to_data)
+			$scope.eventFocus($scope.event_ids_to_data[eventId]);
+		// var eventYear = search['e'].substring(search['e'].length-4);
+		// 	var yearEvents = $scope.past_events_by_year[eventYear];
+		// 	angular.forEach(yearEvents, function(eventValue){	
+		// 		if(eventValue.id == search['e'])
+		// 			$scope.eventFocus(eventValue);
+		// 		});
+		}
 });
+
+fffIndex.filter('dateRange', function (){
+	return function(event){
+		if(event.start_date == event.end_date)
+			return event.start_date;
+		else
+			return event.start_date+" - "+event.end_date;
+	}
+})
 
 /**** CALENDAR ****/
 fffIndex.controller('CalendarCtrl', function($scope){
