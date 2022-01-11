@@ -1,5 +1,23 @@
 pastData = [
 		{
+			"title": "Juneteenth Funds for F.A.R.M.S 2021",
+			"location": "facebook.com",
+			"start_date": "6/18/2021",
+			"end_date": "6/22/2021", 
+			"id" : "006", 
+			"main_image": "resources/events-2021/juneteenth-2021-square.png",
+			"description": "<p>Independence Day is incomplete without Juneteenth.</p><p>We held our second annual Junteenth fundraiser for <a href = 'https://www.30000acres.org' target='_blank'>F.A.R.M.S</a>, a Black-run nonprofit that provides support to small farm owned by people of color and food banks in low-income rural areas. Thanks to our generous donors, surpassed the first year's amount to raise <span class='emphasized'>$1,684</span> over the Juneteenth weekend. We once again thank F.A.R.M.S director Jillian Hishaw for her cooperation with FFF and hard work in reducing food insecurity across the nation!</p>"
+		},
+		{
+			"title": "Flier Bomb at Lititz Fourth of July",
+			"location": "Springs Park, Lititz, PA",
+			"start_date": "7/3/2021",
+			"end_date": "7/3/2021", 
+			"id" :"007", 
+			"main_image": "resources/events-2021/fliering2021.jpg",
+			"description": "<p>Food for the Fourth brought back our first ever event with some old-fashioned grassroots fliering. Our president attended the annual Lititz Fourth of July celebration with info cards listing the facts on the role of food banks in America and encouraging donation during the Independence day season. Over the course of the day, she distributed over 500 cards to celebration attendees.</p>"
+		},
+		{
 			"title": "Firework Food Drive 2020",
 			"location": "West End Lancaster PA",
 			"start_date": "7/12/2020",
